@@ -26,7 +26,6 @@ const useSignup = () => {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            Authorization: localStorage.getItem("token"),
           },
           body: JSON.stringify({ fullName, username, email, password, gender }),
         }
@@ -38,6 +37,7 @@ const useSignup = () => {
       }
       toast.success(data.message);
       localStorage.setItem("baatcheet", JSON.stringify(data));
+      localStorage.setItem("token", data.token);
       setAuthUser(data);
     } catch (error) {
       toast.error(error);
