@@ -14,6 +14,7 @@ BaatCheet is a real-time chat application developed using Node.js, React, Vite, 
 ## Website
 
 Check out the live deployment of BaatCheet: [BaatCheet Web App](https://baatcheet-webapp.netlify.app)
+
 Check out the Server Code of BaatCheet: [BaatCheet Server Repo](https://github.com/praduman03/BaatCheetServer)
 
 ## Technologies Used
