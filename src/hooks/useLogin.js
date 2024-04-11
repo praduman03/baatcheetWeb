@@ -1,5 +1,5 @@
 import { useState } from "react";
-// import toast from "react-hot-toast";
+import toast from "react-hot-toast";
 import { useAuthContext } from "../context/AuthContext";
 
 const useLogin = () => {
@@ -8,7 +8,7 @@ const useLogin = () => {
 
   const loginApi = async ({ username, password }) => {
     if (!username || !password) {
-      // toast.error("Please fill all the fields");
+      toast.error("Please fill all the fields");
       return;
     }
     setLoading(true);
@@ -21,16 +21,16 @@ const useLogin = () => {
       });
       const data = await res.json();
       if (!res.ok) {
-        // toast.error(data.message);
+        toast.error(data.message);
         throw new Error(data.message);
       }
 
-      // toast.success(data.message);
+      toast.success(data.message);
       localStorage.setItem("baatcheet", JSON.stringify(data.user));
       localStorage.setItem("token", "Bearer " + data.token);
       setAuthUser(data.user);
     } catch (error) {
-      // toast.error(error);
+      toast.error(error);
     } finally {
       setLoading(false);
     }
