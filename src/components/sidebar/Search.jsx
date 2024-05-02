@@ -20,7 +20,8 @@ const Search = () => {
     if (conversation) {
       setSelectedConversation(conversation);
       setSearch("");
-    } else toast.error("No such user found!");
+    } 
+    else toast.error("No such user found!");
   };
 
   return (

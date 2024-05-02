@@ -40,7 +40,7 @@ const useSignup = () => {
       localStorage.setItem("token", data.token);
       setAuthUser(data);
     } catch (error) {
-      toast.error(error);
+      toast.error(error.message);
     } finally {
       setLoading(false);
     }

@@ -1,6 +1,5 @@
 import Conversation from "./Conversation";
 import useGetConversations from "../../hooks/useGetConversations";
-import { getRandomEmoji } from "../../utils/emojis";
 
 const Conversations = () => {
   const { loading, conversations } = useGetConversations();
@@ -13,7 +12,6 @@ const Conversations = () => {
           <div key={conversation._id}>
           <Conversation
             conversation={conversation}
-            emoji={getRandomEmoji()}
           />
           </div>
         ))}

@@ -3,7 +3,7 @@ import { useSocketContext } from "../../context/SocketContext";
 import useConversation from "../../zustand/useConversation";
 import "./sidebar.css";
 
-const Conversation = ({ conversation, emoji }) => {
+const Conversation = ({ conversation }) => {
   const { selectedConversation, setSelectedConversation } = useConversation();
   const { onlineUsers } = useSocketContext();
   const isOnline = onlineUsers.includes(conversation._id);
@@ -26,10 +26,8 @@ const Conversation = ({ conversation, emoji }) => {
         <h2> {conversation.fullName || null}</h2>
         <br />
       </div>
-      {isOnline ? (
+      {isOnline && (
         <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-      ) : (
-        <span>{emoji}</span>
       )}
     </div>
   );

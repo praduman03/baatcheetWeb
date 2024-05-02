@@ -3,7 +3,7 @@ import logo from "../../assets/logo.png";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import useLogin from "../../hooks/useLogin";
-// import { Toaster } from "react-hot-toast";
+import { Toaster } from "react-hot-toast";
 
 const Login = () => {
   const [input, setInput] = useState({
@@ -21,7 +21,7 @@ const Login = () => {
   };
   return (
     <>
-      {/* <Toaster /> */}
+      <Toaster />
       <img src={logo} className="logo" alt="" />
       <div className="login-container">
         <div className="login-model">
